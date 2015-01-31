@@ -1,0 +1,12 @@
+Please use the command line
+	
+	mpirun -machinefile machines -np nproc pagerank_mpi input_file alpha tol sol_file
+
+where:
+	nproc - the number of processes, say 16 or 1.
+	input_file - the input web graph file in coordinate format representing a column stochastic matrix. Each line of the input file should in the format of
+	<j> <i> <Pji>
+	where j is the destination node, i is the source node, and Pji is the transition probability P(j|i). The node numbers are continuous intergers starting from 0.
+	alpha - the teleportation parameter, say 0.85. alpha=1 may not converge on some dataset.
+	tol - the convergence criterion, say 1e-5.
+	sol_file - the file to save the pagerank vector.
